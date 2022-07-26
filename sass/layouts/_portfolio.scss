@@ -1,22 +1,43 @@
+.portfolio-section {
+    @extend %section;
+}
+
+.portfolio-container {
+    @extend %container;
+}
+
 .portfolio-list {
     display: flex;
     flex-wrap: wrap;
 }
 
-.portfolio-list .item:hover,
-.portfolio-list .item:focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-list .item {
+.portfolio-card {
     /* width: 370px; */
     width: calc((100% - 60px) / 3);
     margin-right: 30px;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
+        transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
+
+    &:not(:nth-last-child(-n + 3)) {
+        margin-bottom: 30px;
+    }
+
+    &:hover .portfolio-card__description,
+    &:focus .portfolio-card__description {
+        transform: translateY(0);
+    }
 }
 
-.portfolio-list .item .description {
+.portfolio-card__name {
     position: relative;
 
     border-right-width: 1px;
@@ -34,15 +55,7 @@
     padding-left: 24px;
 }
 
-.portfolio-list .item:nth-child(3n) {
-    margin-right: 0;
-}
-
-.portfolio-list .item:not(:nth-last-child(-n + 3)) {
-    margin-bottom: 30px;
-}
-
-.portfolio-list .title {
+.portfolio-card__project-title {
     margin-top: 0;
     margin-bottom: 4px;
 
@@ -55,7 +68,7 @@
     letter-spacing: 0.06em;
 }
 
-.portfolio-list .text {
+.portfolio-card__project-text {
     margin-top: 0;
     margin-bottom: 20px;
 
@@ -72,13 +85,13 @@
     position: relative;
 }
 
-.portfolio-img {
+.portfolio__img {
     position: relative;
     overflow: hidden;
     height: 294px;
 }
 
-.project-description {
+.portfolio-card__description {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,12 +107,7 @@
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.item:hover .project-description,
-.item:focus .project-description {
-    transform: translateY(0);
-}
-
-.project-text {
+.portfolio-card__text {
     margin-left: 24px;
     font-size: 18px;
     line-height: 1.55;

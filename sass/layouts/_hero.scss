@@ -1,5 +1,5 @@
 /* hero */
-.section-hero {
+.hero-section {
 
     max-width: 1600px;
     min-height: 600px;
@@ -21,7 +21,7 @@
     text-align: center;
 }
 
-.section-hero__hero-title {
+.hero-section__hero-title {
     margin-top: 0;
     margin-bottom: 30px;
     margin-right: 283px;
@@ -36,7 +36,7 @@
     letter-spacing: 0.06em;
 }
 
-.section-hero__container {
+.hero-section__container {
     margin-left: auto;
     margin-right: auto;
     width: 1200px;

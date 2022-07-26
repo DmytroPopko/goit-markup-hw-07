@@ -78,6 +78,15 @@
   margin-right: 10px;
 }
 
+.socials-item {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    fill: var(--primary-white-color);
+    background-color: rgba(255, 255, 255, .1);
+}
+
 .socials-link {
     display: flex;
     justify-content: center;

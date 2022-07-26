@@ -13,6 +13,14 @@
 
 .advantages__item {
     width: 270px;
+
+    &:not(:last-child) {
+            margin-right: 30px;
+    }
+}
+
+.advantages__item:not(:last-child) {
+    margin-right: 30px;
 }
 
 .advantages__box {
@@ -29,10 +37,6 @@
 
 .advantages__icon {
     margin: 0 auto;
-}
-
-.advantages__item:not(:last-child) {
-    margin-right: 30px;
 }
 
 .advantages__title {
